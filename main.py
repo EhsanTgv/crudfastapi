@@ -11,3 +11,7 @@ fakeDatabase = {
 @app.get("/")
 def getItems():
     return fakeDatabase
+
+@app.get("/{id}")
+def getItem(id:int):
+    return fakeDatabase[id]
