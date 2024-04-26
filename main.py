@@ -42,3 +42,8 @@ def addItem(item:schemas.Item):
 def updateItem(id:int,item:schemas.Item):
     fakeDatabase[id]['task'] = item.task
     return fakeDatabase
+
+@app.delete("/{id}")
+def deleteItem(id:int):
+    del fakeDatabase[id]
+    return fakeDatabase
